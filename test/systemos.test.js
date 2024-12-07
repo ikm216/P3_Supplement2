@@ -1,5 +1,5 @@
 const os = require('os');
-const { numberCPUs, getSystemDetails } = require('../systemos.js');
+const { numberCPUs, getSystemDetails, hasMemory } = require('../systemos.js');
 
 jest.mock('os');
 

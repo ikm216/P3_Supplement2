@@ -18,4 +18,9 @@ function getSystemDetails(){
   return { architecture, memory };
 }
 
-module.exports = { numberCPUs, getSystemDetails };
+function hasMemory(requiredMemoryMB){
+  const memory = os.freemem() / (1024 ** 2);
+  return memory >= requiredMemoryMB;
+}
+
+module.exports = { numberCPUs, getSystemDetails, hasMemory };
