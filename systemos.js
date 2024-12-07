@@ -8,4 +8,10 @@ function numberCPUs() {
     return os.cpus().length;
 }
 
-module.exports = { numberCPUs };
+function getSystemDetails(){
+  const architecture = os.arch();
+  const memory = (os.totalmem() / (1024 ** 3)).toFixed(2); 
+  return { architecture, memory };
+}
+
+module.exports = { numberCPUs, getSystemDetails };

@@ -1,5 +1,5 @@
 const os = require('os');
-const { numberCPUs } = require('../systemos.js');
+const { numberCPUs, getSystemDetails } = require('../systemos.js');
 
 jest.mock('os');
 
@@ -13,6 +13,6 @@ describe('Os Functions', () => {
         os.arch.mockReturnValue('x64');
         os.totalmem.mockReturnValue(16 * 1024 ** 3);
         const details = getSystemDetails();
-        expect(details).toEqual({ architecture: 'x64', totalMemoryGB: '16.00' });
+        expect(details).toEqual({ architecture: 'x64', memory: '16.00' });
     });
 });
