@@ -18,6 +18,11 @@ function getSystemDetails(){
   return { architecture, memory };
 }
 
+/**
+ * Checks if the system has enough free memory to allocate the specified amount.
+ * @param {number} requiredMemoryMB - Memory required in megabytes.
+ * @returns {boolean} True if sufficient memory is available, otherwise false.
+ */
 function hasMemory(requiredMemoryMB){
   const memory = os.freemem() / (1024 ** 2);
   return memory >= requiredMemoryMB;
